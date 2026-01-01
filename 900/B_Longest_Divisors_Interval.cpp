@@ -55,15 +55,11 @@ int LCM(int a, int b){
 map<int, int> m;
 
 void precompute(){
-    int k = 1;
-    while(1){
-        int lcm = 1;
-        rep(i,1,k+1){
-            lcm = LCM(lcm, i);
-        }
+    int lcm = 1;
+    for(int k=1; ; k++){
+        lcm = LCM(lcm, k);
         if(lcm > 1e18) break;
         m[k] = lcm;
-        k++;
     }
 }
 
